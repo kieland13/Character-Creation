@@ -1,0 +1,109 @@
+﻿@model IEnumerable<DAndDWebsite.Models.Weapon>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Search for a weapon:</h2>
+
+<form asp-controller="Weapons" asp-action="Index" method="get">
+    <p>
+        Weapon Name: <input type="text" name="SearchString">
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Damage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DamageType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeaponName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeaponType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Damage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DamageType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<style>
+    a {
+        color: white;
+    }
+
+    td {
+        font-weight: bold;
+        color: white;
+    }
+
+    h2 {
+        background: -webkit-linear-gradient(#eee, rgb(100, 55, 200));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: Italic;
+        font-family: Impact;
+        font-size: 5em;
+        letter-spacing: -2px;
+        border-bottom: 10px groove rgb(100, 55, 200);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transform: scale(1);
+        animation: pulse 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in 10s, ease-out 2s;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(.70);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>

@@ -1,0 +1,72 @@
+﻿@model DAndDWebsite.Models.Dice
+
+
+@{
+    ViewData["Title"] = "Dice";
+}
+
+<h1>D20 Dice:</h1>
+
+
+<form action="RollD20Dice" method="post">
+    <table>
+        <tr>
+            <th>
+                <h2>You rolled a @Model.d20Dice</h2>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input type="image" src="~/lib/newD20Dice.png" alt="submit" height="150" width="150" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a asp-area="" asp-controller="Home" asp-action="Dice">Choose a different Dice</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<style>
+    a {
+        color: white;
+    }
+
+    .dice {
+        width: 100%;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    h1 {
+        background: -webkit-linear-gradient(#eee, rgb(100, 55, 200));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: Italic;
+        font-family: Impact;
+        font-size: 5em;
+        letter-spacing: -2px;
+        border-bottom: 10px groove rgb(100, 55, 200);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transform: scale(1);
+        animation: pulse 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in 10s, ease-out 2s;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(.70);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>

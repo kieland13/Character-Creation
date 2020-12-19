@@ -1,0 +1,126 @@
+﻿@model DAndDWebsite.Models.Character
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Character:</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CharacterName" class="control-label"></label>
+                <input asp-for="CharacterName" class="form-control" />
+                <span asp-validation-for="CharacterName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Height" class="control-label"></label>
+                <input asp-for="Height" class="form-control" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassSelection" class="control-label"></label>
+                <input asp-for="ClassSelection" class="form-control" />
+                <span asp-validation-for="ClassSelection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RaceSelection" class="control-label"></label>
+                <input asp-for="RaceSelection" class="form-control" />
+                <span asp-validation-for="RaceSelection" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hair" class="control-label"></label>
+                <input asp-for="Hair" class="form-control" />
+                <span asp-validation-for="Hair" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Eyes" class="control-label"></label>
+                <input asp-for="Eyes" class="form-control" />
+                <span asp-validation-for="Eyes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Skin" class="control-label"></label>
+                <input asp-for="Skin" class="form-control" />
+                <span asp-validation-for="Skin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+<style>
+    a {
+        color: white;
+    }
+
+    td {
+        font-weight: bold;
+        color: white;
+    }
+
+    th {
+        font-weight: bold;
+        color: black;
+    }
+
+    h1 {
+        background: -webkit-linear-gradient(#eee, rgb(100, 55, 200));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: Italic;
+        font-family: Impact;
+        font-size: 5em;
+        letter-spacing: -2px;
+        border-bottom: 10px groove rgb(100, 55, 200);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transform: scale(1);
+        animation: pulse 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in 10s, ease-out 2s;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(.70);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>

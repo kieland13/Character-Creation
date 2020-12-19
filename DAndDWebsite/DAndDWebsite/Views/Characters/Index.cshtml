@@ -1,0 +1,132 @@
+﻿@model IEnumerable<DAndDWebsite.Models.Character>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Character Sheet:</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CharacterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassSelection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RaceSelection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hair)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eyes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Skin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CharacterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Height)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassSelection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RaceSelection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hair)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Eyes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Skin)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    a {
+        color: white;
+    }
+
+    td {
+        font-weight: bold;
+        color: white;
+    }
+    th {
+        font-weight: bold;
+        color:black;
+    }
+
+    h2 {
+        background: -webkit-linear-gradient(#eee, rgb(100, 55, 200));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: Italic;
+        font-family: Impact;
+        font-size: 5em;
+        letter-spacing: -2px;
+        border-bottom: 10px groove rgb(100, 55, 200);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transform: scale(1);
+        animation: pulse 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in 10s, ease-out 2s;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(.70);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>
+

@@ -1,0 +1,105 @@
+﻿@model DAndDWebsite.Models.Weapon
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Weapon:</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="WeaponName" class="control-label"></label>
+                <input asp-for="WeaponName" class="form-control" />
+                <span asp-validation-for="WeaponName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeaponType" class="control-label"></label>
+                <input asp-for="WeaponType" class="form-control" />
+                <span asp-validation-for="WeaponType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cost" class="control-label"></label>
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Damage" class="control-label"></label>
+                <input asp-for="Damage" class="form-control" />
+                <span asp-validation-for="Damage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DamageType" class="control-label"></label>
+                <input asp-for="DamageType" class="form-control" />
+                <span asp-validation-for="DamageType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<style>
+    a {
+        color: white;
+    }
+
+    td {
+        font-weight: bold;
+        color: white;
+    }
+
+    th {
+        font-weight: bold;
+        color: black;
+    }
+
+    h1 {
+        background: -webkit-linear-gradient(#eee, rgb(100, 55, 200));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: Italic;
+        font-family: Impact;
+        font-size: 5em;
+        letter-spacing: -2px;
+        border-bottom: 10px groove rgb(100, 55, 200);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transform: scale(1);
+        animation: pulse 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in 10s, ease-out 2s;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(.70);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>

@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Dice";
+}
+
+<h1>Character Dice:</h1>
+
+
+<div class="dice">
+    <table style="width:100%">
+        <tr>
+            <td>
+                <form action="RollD20Dice" method="post">
+                    <h3>d20 Dice</h3>
+                    <input type="image" src="~/lib/newD20Dice.png" alt="submit" height="150" width="150" />
+                </form>
+            </td>
+            <td>
+                <form action="RollD10Dice" method="post">
+                    <h3>d10 Dice</h3>
+                    <input type="image" src="~/lib/newD10Dice.png" alt="submit" height="150" width="150" />
+                </form>
+            </td>
+            <td>
+                <form action="RollD8Dice" method="post">
+                    <h3>d8 Dice</h3>
+                    <input type="image" src="~/lib/newD8Dice.png" alt="submit" height="150" width="150" />
+                </form>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="RollD6Dice" method="post">
+                    <h3>d6 Dice</h3>
+                    <input type="image" src="~/lib/newD6Dice.png" alt="submit" height="150" width="150" />
+                </form>
+            </td>
+            <td>
+                <form action="RollD4Dice" method="post">
+                    <h3>d4 Dice</h3>
+                    <input type="image" src="~/lib/newD4Dice.png" alt="submit" height="150" width="150" />
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<style>
+    .dice {
+        width: 100%;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    h1 {
+        background: -webkit-linear-gradient(#eee, rgb(100, 55, 200));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: Italic;
+        font-family: Impact;
+        font-size: 5em;
+        letter-spacing: -2px;
+        border-bottom: 10px groove rgb(100, 55, 200);
+        border-radius: 10px;
+        text-transform: uppercase;
+        transform: scale(1);
+        animation: pulse 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in 10s, ease-out 2s;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(.70);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>
